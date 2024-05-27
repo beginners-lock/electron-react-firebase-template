@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import First from "./components/First";
+import Dashboard from "./components/Dashboard";
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(){
+	const [page, setPage] = useState('first');
+
+	return (
+		<div style={{width:'100%', height:'100%'}}>
+		{
+			page==='first'?
+				<First
+					changepage={(page)=>{ setPage(page); }}
+				/>
+			:	<Dashboard
+					changepage={(page)=>{ setPage(page); }}
+				/>
+		}	
+		</div> 
+	)
 }
 
-export default App;
+export default App

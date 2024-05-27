@@ -1,0 +1,12 @@
+.spindiv{
+    animation:spin 1s linear infinite; border-width:4px; border-color:#f3f3f3; border-top-color:#383636; border-radius:50%;
+}
+
+@keyframes spin {
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
